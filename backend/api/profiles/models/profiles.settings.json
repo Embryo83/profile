@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profiles",
+  "info": {
+    "name": "profiles",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "surname": {
+      "type": "string"
+    },
+    "about": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email"
+    },
+    "telegram": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "vk": {
+      "type": "string"
+    }
+  }
+}
