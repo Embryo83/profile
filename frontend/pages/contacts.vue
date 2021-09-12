@@ -25,14 +25,14 @@ export default {
 <style scoped>
 .container {
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   display: flex;
   text-align: center;
 }
 
 .title {
-  padding: 10px;
+  padding: 50px;
   text-transform: uppercase;
   color: #fff;
 }

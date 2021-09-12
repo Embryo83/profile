@@ -26,11 +26,15 @@ html {
 
 .container {
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   min-height: 100vh;
   text-align: center;
   background: #014;
+}
+
+.main__links {
+  padding-top: 100px;
 }
 
 .main__button {

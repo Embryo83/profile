@@ -8,10 +8,14 @@
       <NLink class="main__button" to="/contacts">Контакты</NLink>
     </div>
     <h2 class="title">Обо мне</h2>
-    <p class="description">
-      Письменный переводчик(художественный перевод), автор-исполнитель,
-      веб-разработчик
+    <div v-if="error">
+      {{ error }}
+    </div>
+    <div v-else>
+    <p v-for="profile in profiles" :key="profile.id" class="description">
+      {{ profile.about }}
     </p>
+    </div>
     <iframe
       frameborder="0"
       style="border: none; width: 100%; height: 180px"
@@ -28,17 +32,35 @@
   </div>
 </template>
 
+<script>
+export default {
+  data () {
+    return {
+      profiles: [],
+      error: null
+    }
+  },
+  async mounted () {
+    try {
+      this.profiles = await this.$strapi.$profiles.find()
+    } catch (error) {
+      this.error = error
+    }
+  },
+}
+</script>
+
 <style scoped>
 .container {
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   display: flex;
   text-align: center;
 }
 
 .title {
-  padding: 10px;
+  padding: 50px;
   text-transform: uppercase;
   color: #fff;
 }
